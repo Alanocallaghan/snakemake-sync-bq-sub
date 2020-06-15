@@ -96,7 +96,7 @@ resources_cmd = {
     ),
     "qsub": (
         # shared memory processes, preferentially on consecutive cores
-        "-pe smp {threads} -binding linear:{threads}"
+        "-pe sharedmem {threads} -binding linear:{threads}"
         # memory limit and memory request
         " -l h_vmem={mem_per_thread}M"
         " -l m_mem_free={mem_per_thread}M"
