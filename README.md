@@ -16,7 +16,7 @@ pip) by running:
 # make sure configuration directory snakemake looks for profiles in exists
 mkdir -p ~/.config/snakemake
 # use cookiecutter to create a profile in the config directory
-cookiecutter --output-dir ~/.config/snakemake gh:jaicher/snakemake-sync-bq-sub
+cookiecutter --output-dir ~/.config/snakemake gh:alanocallaghan/snakemake-sync-bq-sub
 ```
 
 This command will prompt for parameters to set. In particular, it will ask a
