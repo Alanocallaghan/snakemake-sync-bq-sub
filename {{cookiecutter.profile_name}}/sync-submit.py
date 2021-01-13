@@ -103,6 +103,25 @@ resources_cmd = {
     )
 }["{{cookiecutter.cluster}}"]
 
+
+runtime = resources.get(
+    "runtime",
+    None
+) or cluster.get(
+    "runtime",
+    None
+)
+
+if runtime:
+    # make sure it is integer
+    runtime = int(runtime)
+    # runtime needs to be specified in HH:MM:SS, but is currently in minutes
+    runtime_hr = runtime // 60
+    runtime_min = runtime % 60
+    # add to resources command
+    resources_cmd += " -l h_rt={runtime_hr}:{runtime_min}:00"
+
+
 # get queue part of command (if empty, don't put in anything)
 queue_cmd = "-q {queue}" if queue else ""
 
