@@ -95,8 +95,8 @@ resources_cmd = {
         " -R 'span[hosts=1] rusage [mem={mem_mb}]'"
     ),
     "qsub": (
-        # shared memory processes, preferentially on consecutive cores
-        "-pe sharedmem {threads} -binding linear:{threads}"
+        # shared memory processes
+        "-pe sharedmem {threads}"
         # memory limit and memory request
         " -l h_vmem={mem_per_thread}M"
         " -l m_mem_free={mem_per_thread}M"
